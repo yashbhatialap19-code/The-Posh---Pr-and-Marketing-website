@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Posh PR & Marketing</title>
+  <style>
+    /* Reset and base styles */
+    body, h1, h2, h3, p, ul, li, a, button {
+      margin: 0;
+      padding: 0;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: #222;
+    }
+    body {
+      background-color: #fff;
+      font-size: 16px;
+      color: #333;
+    }
+    a {
+      color: #d6336c;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #a82d55;
+    }
+
+    /* Container */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 50px 20px 30px;
+      background: #f9f0f4;
+    }
+    header h1 {
+      font-size: 3rem;
+      color: #d6336c;
+      margin-bottom: 10px;
+    }
+    header p.tagline {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #555;
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 50px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 30px;
+    }
+    section:last-child {
+      border-bottom: none;
+    }
+    section h2 {
+      font-size: 2rem;
+      color: #d6336c;
+      margin-bottom: 15px;
+      border-left: 6px solid #d6336c;
+      padding-left: 12px;
+    }
+    .services ul {
+      list-style: none;
+      columns: 2;
+      gap: 20px;
+    }
+    .services ul li {
+      margin-bottom: 15px;
+      font-weight: 500;
+    }
+    .testimonials blockquote {
+      background: #f9f0f4;
+      border-left: 6px solid #d6336c;
+      padding: 20px;
+      margin: 20px 0;
+      font-style: italic;
+      color: #666;
+      quotes: "“" "”" "‘" "’";
+    }
+    .testimonials blockquote:before {
+      content: open-quote;
+      font-size: 2rem;
+      line-height: 0;
+      color: #d6336c;
+      vertical-align: -0.4em;
+      margin-right: 10px;
+    }
+    .testimonial-author {
+      margin-top: 10px;
+      font-weight: 700;
+      color: #444;
+      text-align: right;
+    }
+
+    /* Contact & CTA */
+    .contact-info p, .contact-info a {
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+    .cta {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .cta button {
+      background: #d6336c;
+      color: white;
+      border: none;
+      padding: 15px 40px;
+      font-size: 1.25rem;
+      cursor: pointer;
+      border-radius: 30px;
+      transition: background 0.3s ease;
+    }
+    .cta button:hover {
+      background: #a82d55;
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .services ul {
+        columns: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1>The Posh PR & Marketing</h1>
+      <p class="tagline">Elevate Your Brand. Inspire Your Audience.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="about-us">
+      <h2>About Us</h2>
+      <p>At The Posh PR & Marketing, we believe every brand has a unique story waiting to be told. Our expert team combines innovative strategies with creative storytelling to build authentic connections between you and your audience. With a passion for excellence and a commitment to results, we bring your brand vision to life across digital, social, and traditional platforms.</p>
+    </section>
+
+    <section class="services">
+      <h2>Our Services</h2>
+      <ul>
+        <li><strong>Brand Strategy & Identity</strong><br>Crafting powerful, authentic brand identities that resonate and inspire.</li>
+        <li><strong>Social Media Marketing</strong><br>Engaging content and meaningful interactions that grow your community organically.</li>
+        <li><strong>Public Relations & Media Outreach</strong><br>Building and protecting your brand’s reputation through strategic communications.</li>
+        <li><strong>Event Management</strong><br>Designing memorable events that captivate audiences and leave lasting impressions.</li>
+        <li><strong>Content Creation</strong><br>Compelling stories, visuals, and videos that bring your brand message to life.</li>
+        <li><strong>Digital Advertising</strong><br>Targeted online campaigns that maximize reach and drive valuable engagement.</li>
+        <li><strong>Influencer Collaborations</strong><br>Partnering with industry influencers to enhance credibility and expand your reach.</li>
+      </ul>
+    </section>
+
+    <section class="why-choose-us">
+      <h2>Why Choose Us?</h2>
+      <ul>
+        <li><strong>Expert Team:</strong> Industry professionals dedicated to innovation and success.</li>
+        <li><strong>Tailored Strategies:</strong> Custom solutions to meet your unique goals.</li>
+        <li><strong>Proven Results:</strong> Campaigns with measurable impact across sectors.</li>
+        <li><strong>Creative Excellence:</strong> Cutting-edge design and storytelling.</li>
+      </ul>
+    </section>
+
+    <section class="testimonials">
+      <h2>Success Stories</h2>
+      <blockquote>
+        The Posh PR & Marketing transformed our brand presence, helping us achieve unprecedented growth and engagement. Their team is creative, reliable, and results-driven.
+        <div class="testimonial-author">— Ajay Rajpal, CEO, Akra by Sukoon</div>
+      </blockquote>
+      <blockquote>
+        Their social media strategies increased our organic reach and customer interaction like never before.
+        <div class="testimonial-author">— Vicky Saluja, Owner, Baby Dragon Restaurant</div>
+      </blockquote>
+    </section>
+
+    <section class="gallery-social">
+      <h2>Gallery & Social Feed</h2>
+      <p>Explore our latest campaigns, events, and creative projects on our Instagram <a href="https://www.instagram.com/theposh.in/" target="_blank" rel="noopener">@theposh.in</a>.</p>
+      <!-- Instagram embed can be added here later -->
+    </section>
+
+    <section class="contact-us">
+      <h2>Contact Us</h2>
+      <div class="contact-info">
+        <p>Email: <a href="mailto:theposhpr@gmail.com">theposhpr@gmail.com</a></p>
+        <p>Phone: <a href="tel:+919315012721">+91 93150 12721</a></p>
+        <p>Instagram: <a href="https://www.instagram.com/theposh.in/" target="_blank" rel="noopener">@theposh.in</a></p>
+      </div>
+      <div class="cta">
+        <button onclick="window.location='mailto:theposhpr@gmail.com?subject=Consultation Request';">Book Your Consultation</button>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
