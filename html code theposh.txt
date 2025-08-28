@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Posh PR & Marketing</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    :root {
+      --primary: #74206d;
+      --secondary: #fff0f8;
+      --dark: #3a1c2d;
+      --accent: #4f2e4d;
+      --radius: 18px;
+    }
+    body {
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: var(--secondary);
+      color: var(--dark);
+      margin: 0;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: linear-gradient(100deg, var(--primary) 60%, var(--accent) 100%);
+      color: #fff;
+      text-align: center;
+      padding: 60px 18px 50px 18px;
+      border-bottom-left-radius: var(--radius);
+      border-bottom-right-radius: var(--radius);
+      position: relative;
+      overflow: hidden;
+    }
+    .logo-img {
+      max-width: 170px;
+      margin: 0 auto 10px auto;
+      display: block;
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 2px 30px #3a1c2d15;
+      padding: 12px 4px;
+    }
+    header h1 {
+      font-size: 2.3rem;
+      margin: 13px 0 10px 0;
+      letter-spacing: 1px;
+      color: #fff;
+    }
+    header p {
+      font-size: 1.15rem;
+      margin-bottom: 28px;
+      color: #ffe7fd;
+    }
+    .cta-btn {
+      padding: 13px 35px;
+      font-size: 1.1rem;
+      border-radius: 24px;
+      border: none;
+      background: #fff;
+      color: var(--primary);
+      font-weight: bold;
+      box-shadow: 0 2px 18px #fff5;
+      cursor: pointer;
+      transition: background 0.28s;
+    }
+    .cta-btn:hover { background: #fffbe8; color: #4f2e4d }
+    main { max-width: 1100px; margin: 0 auto; padding: 38px 16px; }
+    section { margin-bottom: 60px; }
+    h2 { color: var(--primary); font-size: 2rem; margin-bottom: 0.5em; }
+    .about, .why-us, .contact { background: #fff; border-radius: var(--radius); padding: 38px 26px; box-shadow: 0 4px 16px #3a1c2d13; }
+    .services { display: flex; flex-wrap: wrap; gap: 32px; justify-content: center; }
+    .service-card {
+      background: linear-gradient(100deg, #fff 60%, #f7efff 100%);
+      border-radius: var(--radius);
+      box-shadow: 0 2px 12px #74206d1e;
+      padding: 25px 18px;
+      width: 260px;
+      position: relative;
+      flex: 1 0 210px;
+      margin: 0 8px 18px;
+      transition: transform 0.22s, box-shadow 0.25s;
+    }
+    .service-card:hover { transform: translateY(-8px) scale(1.03); box-shadow: 0 4px 34px #74206d36; }
+    .service-card i {
+      display: block;
+      font-size: 2.15rem;
+      margin-bottom: 11px;
+      color: var(--primary);
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(170px,1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .gallery img {
+      border-radius: var(--radius);
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      box-shadow: 0 2px 16px #74206d20;
+      transition: transform 0.2s;
+    }
+    .gallery img:hover { transform: scale(1.07); }
+    .testimonials-slider {
+      background: #f3e8f7;
+      border-radius: var(--radius);
+      padding: 32px 20px 22px 20px;
+      box-shadow: 0 3px 14px #74206d18;
+      max-width: 750px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .testimonial {
+      display: none;
+      transition: opacity 0.4s;
+      font-size: 1.03rem;
+      color: #582960;
+    }
+    .testimonial.active { display: block; }
+    .testimonial-author { font-weight: bold; color: #491667; font-size: 1.07em; margin-top: 10px; }
+    .slider-dots { text-align: center; margin-top: 16px; }
+    .slider-dot {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      background: #fff;
+      border: 2px solid var(--primary);
+      border-radius: 50%;
+      margin: 0 7px;
+      cursor: pointer;
+      transition: background 0.23s;
+    }
+    .slider-dot.active { background: var(--primary); }
+    .contact .info { margin-top: 13px; margin-bottom: 15px; font-weight: 500; }
+    .contact .info a { color: var(--primary); text-decoration: none; }
+    .contact .info a:hover { text-decoration: underline; }
+    .float-buttons {
+      position: fixed;
+      bottom: 31px;
+      right: 17px;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      gap: 17px;
+    }
+    .float-btn {
+      background: #25d366;
+      color: #fff;
+      width: 51px;
+      height: 51px;
+      border-radius: 50%;
+      box-shadow: 0 3px 18px #0a1f001c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      transition: box-shadow 0.25s, background 0.2s;
+      border: none;
+      outline: none;
+      text-decoration: none;
+    }
+    .float-btn.ig { background: #74206d; }
+    .float-btn:hover { box-shadow: 0 6px 22px #74206d54, 0 0px 0px #fff9; }
+    .insta-feed-box {
+      text-align: center;
+      background: #fff;
+      padding: 30px 8px;
+      margin-top: 22px;
+      border-radius: 18px;
+      box-shadow: 0 2px 16px #74206d18;
+    }
+    .insta-feed-box a {
+      color: #74206d;
+      font-weight: 700;
+      letter-spacing: .5px;
+      text-decoration: none;
+      font-size: 1.21rem;
+    }
+    .insta-feed-box a:hover {
+      text-decoration: underline;
+      color: #a44ab7;
+    }
+    @media(max-width: 800px) {
+      header h1 { font-size: 1.3rem; }
+      .services { flex-direction: column; align-items: center; }
+      .service-card { width: 97%; min-width: unset; }
+      .about,.why-us,.contact,.insta-feed-box { padding: 20px 5vw;}
+      .gallery img { height: 110px;}
+      .logo-img { max-width:90vw;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="the-posh-logo-1.jpg" alt="The Posh PR & Marketing Logo" class="logo-img">
+    <h1>The Posh PR & Marketing</h1>
+    <p>Elevate Your Brand. Inspire Your Audience.</p>
+    <button class="cta-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Book a Free Consultation</button>
+  </header>
+
+  <main>
+    <section class="about">
+      <h2>About Us</h2>
+      <p>
+        At The Posh PR & Marketing, we elevate brands with innovative marketing, PR, and media strategies. Our expert team tailors solutions to enhance your brand identity, connect with your audience, and deliver impactful results across digital, social, and offline platforms. We ensure your brand’s story gets heard, remembered, and shared, multiplying your business success.
+      </p>
+    </section>
+
+    <section>
+      <h2>Our Services</h2>
+      <div class="services">
+        <div class="service-card"><i class="fas fa-calendar-check"></i><b>Event Management</b><br>Creating engaging events that captivate your audience and leave a lasting impression.</div>
+        <div class="service-card"><i class="fas fa-rocket"></i><b>Brand Strategy</b><br>Developing unique, authentic brand identities to reflect your vision, values & goals.</div>
+        <div class="service-card"><i class="fas fa-edit"></i><b>Content Creation</b><br>Compelling narratives and visuals for maximum engagement across platforms.</div>
+        <div class="service-card"><i class="fas fa-bullhorn"></i><b>Digital Advertisements</b><br>Targeted campaigns designed to maximize reach and drive results.</div>
+        <div class="service-card"><i class="fas fa-users"></i><b>PR Campaigns</b><br>Building a positive public image with strategic communication.</div>
+        <div class="service-card"><i class="fas fa-user-tie"></i><b>Influencer Marketing</b><br>Connecting your business with industry-leading voices to expand your brand’s reach.</div>
+        <div class="service-card"><i class="fab fa-instagram"></i><b>Social Media Marketing</b><br>Effective strategies to foster engagement and build your community.</div>
+        <div class="service-card"><i class="fas fa-broadcast-tower"></i><b>Offline & Radio Marketing</b><br>Traditional strategies to reinforce digital efforts and brand recall.</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Work Highlights</h2>
+      <div class="gallery">
+        <!-- Replace with your campaign or event images -->
+        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Event">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Branding">
+        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Project">
+        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Workshop">
+      </div>
+    </section>
+
+    <section class="why-us">
+      <h2>Why Choose Us?</h2>
+      <ul>
+        <li><b>Expert Team:</b> Industry professionals driven by innovation and results.</li>
+        <li><b>Tailored Solutions:</b> Strategies crafted for your unique goals.</li>
+        <li><b>Proven Results:</b> Campaigns with real, measurable impact.</li>
+        <li><b>Creative Excellence:</b> Storytelling and design that engage and inspire.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Client Love</h2>
+      <div class="testimonials-slider" id="testimonials">
+        <div class="testimonial active">
+          “The Posh PR & Marketing transformed our brand presence, helping us achieve unprecedented growth and engagement. Their team is creative, reliable, and results-driven.”
+          <div class="testimonial-author">— Ajay Rajpal, CEO, Akra by Sukoon</div>
+        </div>
+        <div class="testimonial">
+          “Their social media strategies increased our organic reach and customer interaction like never before.”
+          <div class="testimonial-author">— Vicky Saluja, Owner, Baby Dragon Restaurant</div>
+        </div>
+        <div class="testimonial">
+          “Posh’s influencer expertise gave our launch the vital boost it needed. Highly recommended for brands aiming for visibility.”
+          <div class="testimonial-author">— Shivani Singh, Influencer</div>
+        </div>
+        <div class="slider-dots">
+          <span class="slider-dot active" onclick="showTestimonial(0)"></span>
+          <span class="slider-dot" onclick="showTestimonial(1)"></span>
+          <span class="slider-dot" onclick="showTestimonial(2)"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="insta-feed-box">
+      <h2>Explore Us on Instagram</h2>
+      <p>
+        See our latest projects and campaigns on <a href="https://www.instagram.com/theposh.in/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> @theposh.in</a>
+      </p>
+      <!-- For a dynamic feed, tools like LightWidget, Elfsight, or official IG embed can be added here if needed -->
+    </section>
+
+    <section class="contact" id="contact">
+      <h2>Contact Us</h2>
+      <div class="info">
+        <div>Email: <a href="mailto:theposhpr@gmail.com">theposhpr@gmail.com</a></div>
+        <div>Phone: <a href="tel:+919315012721">+91 93150 12721</a></div>
+        <div>Instagram: <a href="https://www.instagram.com/theposh.in/" target="_blank">@theposh.in</a></div>
+      </div>
+      <button class="cta-btn" onclick="window.location='mailto:theposhpr@gmail.com?subject=Consultation Request from Website';">Book a Free Consultation</button>
+    </section>
+  </main>
+
+  <div class="float-buttons">
+    <a href="https://wa.me/919315012721" target="_blank" rel="noopener" class="float-btn" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.instagram.com/theposh.in/" target="_blank" rel="noopener" class="float-btn ig" title="View Instagram"><i class="fab fa-instagram"></i></a>
+  </div>
+
+  <script>
+    // Testimonials slider functionality
+    function showTestimonial(idx) {
+      let tList = document.querySelectorAll('.testimonial');
+      let dList = document.querySelectorAll('.slider-dot');
+      tList.forEach((el, i) => el.classList.toggle('active', i===idx));
+      dList.forEach((el, i) => el.classList.toggle('active', i===idx));
+    }
+  </script>
+</body>
+</html>
